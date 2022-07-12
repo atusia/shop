@@ -1,0 +1,9 @@
+<div *ngIf="cartList.length > 0; else cartIsEmpty">
+    <h2>Products in Cart</h2>
+    <ul>
+        <li *ngFor="let item of cartList; trackBy: trackByItems">{{item.title}}</li>
+    </ul>
+</div>
+<ng-template #cartIsEmpty>
+    <h2>Your cart is empty!</h2>
+</ng-template>
