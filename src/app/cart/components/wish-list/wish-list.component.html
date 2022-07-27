@@ -1,0 +1,9 @@
+<div *ngIf="wishList.length > 0; else wishListIsEmpty">
+    <h2>Products in your Wish List</h2>
+    <ul>
+        <li *ngFor="let item of wishList; trackBy: trackByItems">{{item.title}}</li>
+    </ul>
+</div>
+<ng-template #wishListIsEmpty>
+    <h2>Your wish list is empty!</h2>
+</ng-template>

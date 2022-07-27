@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { IProductModel } from '../../models/product.model';
 
 @Component({
@@ -8,6 +8,8 @@ import { IProductModel } from '../../models/product.model';
 })
 export class ProductComponent implements OnInit {
   @Input() product!: IProductModel;
+  @Output() addedProductToCart = new EventEmitter<IProductModel>();
+  @Output() addedProductToWishList = new EventEmitter<IProductModel>()
 
   constructor() { }
 
@@ -15,6 +17,12 @@ export class ProductComponent implements OnInit {
   }
 
   onAddToCart(): void {
+    this.addedProductToCart.emit(this.product);
     console.log(`The "${this.product.title}" was added to cart!`);
+  }
+
+  onAddToWishList(): void {
+    this.addedProductToWishList.emit(this.product);
+    console.log(`The "${this.product.title}" was added to wish list!`);
   }
 }

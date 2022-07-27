@@ -12,4 +12,14 @@ export class CartService {
   getProducts(): IProductModel[] {
     return productsInCart;
   }
+
+  getTotalCost(): number {
+    let result = 0;
+    productsInCart.forEach(item => result += item.price);
+    return result;
+  }
+
+  getTotalQuantity(): number {
+    return productsInCart.length;
+  }
 }
