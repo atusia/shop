@@ -6,5 +6,6 @@ export interface IProductModel {
     price: number;
     description: string;
     image?: string;
-    category: GoodsCategory
+    category: GoodsCategory,
+    available: boolean
 }

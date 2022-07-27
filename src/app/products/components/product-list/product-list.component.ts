@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { productsInWishList } from '../../../cart/products-in-wish-list';
+import { productsInCart } from '../../../cart/products-in-cart';
 import { IProductModel } from '../../models/product.model';
 import { ProductService } from '../../services/product.service';
 
@@ -16,4 +18,13 @@ export class ProductListComponent implements OnInit {
     this.products = this.productService.getProducts();
   }
 
+  onAddProductToCart(product: IProductModel): void {
+    if (product.available) {
+      productsInCart.push(product);
+    }
+  }
+
+  onAddProductToWishList(product: IProductModel): void {
+    productsInWishList.push(product);
+  }
 }

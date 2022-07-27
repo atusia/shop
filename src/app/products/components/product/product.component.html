@@ -1,2 +1,21 @@
-<h3>{{product.title}}</h3>
-<button (click)="onAddToCart()">Buy</button>
+<mat-card class="mat-card mat-focus-indicator product-card">
+    <a class="p-link" href="">
+        <img alt="Photo" class="mat-card-image" src={{product.image}}>
+    </a>
+    <div class="wishlist-icon" (click)="onAddToWishList()">
+        <i class="material-icons">favorite</i>
+    </div>
+    <mat-card-content class="mat-card-content product-content relative">
+        <h3><a class="title-link">{{product.title}}</a></h3>
+        <div class="purchase-wrapper">
+            <h4 class="price">{{product.price | currency: 'UAH ' }}</h4>
+            <div class="m-icon">
+                <button class="mat-focus-indicator mat-fab mat-button-base mat-warn" color="warn" (click)="onAddToCart()" [disabled]="!product.available ? 'disabled' : null">
+                    <span class="mat-button-wrapper">
+                        <i class="mat-icon notranslate material-icons mat-icon-no-color" color="warn">shopping_cart</i>
+                    </span> 
+                </button>
+            </div> 
+        </div>
+     </mat-card-content> 
+</mat-card>

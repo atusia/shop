@@ -7,7 +7,8 @@ export const products = [
         price: 520,
         description: 'Regular side neck to hem 49" / 124cm. Machine washable. 100% Cotton.',
         image: '../../assets/images/T67-520s4.jpg',
-        category: GoodsCategory.clothing
+        category: GoodsCategory.clothing,
+        available: true
     },
     {
         title: 'Utility Style Messenger Bag',
@@ -16,7 +17,8 @@ export const products = [
         description: 'Secure, stylish and easy to wear. This utlity style messenger bag will complement your everyday wardrobe with ease.' + 
             ' Available in a variety of colours. Lining 100% Recycled polyester.',
         image: '../../assets/images/T71-816s.jpg',
-        category: GoodsCategory.accesories
+        category: GoodsCategory.accesories,
+        available: true
     },
     {
         title: 'Block Simple Sandals',
@@ -24,6 +26,7 @@ export const products = [
         price: 450,
         description: 'With Memory Foam layer to help you stay on your feet all day in comfort and style.',
         image: '../../assets/images/T28-242s2.jpg',
-        category: GoodsCategory.footware
+        category: GoodsCategory.footware,
+        available: false
     }
 ]
